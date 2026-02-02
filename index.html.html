@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💌</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: none;
+    background:rgb(20, 37, 85);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    background-image: url("1000026182.jpg");
+     background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+p {
+    max-width: 600px;
+    line-height: 1.7;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+button {
+    margin-top: 25px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background: #ff4e50;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff2e63;
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.final {
+    background: rgb(139, 32, 32);
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<section>
+    <h1>Hey You 😌</h1>
+    <p>YOU CAN'T ESCAPE THIS KIND OF LOVE!!
+        BUT CAN YOU KEEP UP😉
+    </p>
+    
+
+    <p>Press play… this song says it better than I can 😏🎧</p>
+
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/43JEzpUepmETKeTwqLWauB"
+      width="300"
+      height="80"
+      frameborder="0"
+      allow="encrypted-media">
+    </iframe>
+    <script>
+function startMusic() {
+  // Spotify embeds CANNOT be controlled by JS
+  alert("Press play on the song 😌");
+}
+</script>
+
+</section>
+
+<script>
+function startMusic() {
+  // Spotify embeds CANNOT be controlled by JS
+  alert("Press play on the song 😌");
+}
+</script>
+
+<!-- SECTION 2 -->
+<section style="background-image: url('IMG-20250910-WA0008.jpg');">
+    <h2>Remember This? 😉</h2>
+    <p>
+    
+        Everytime i see you My Heart"!"❤️
+        The feeling you get as the crowd roars.Now i don't need a crowd i just need one💘
+        
+        I like when i see the same in you 😌
+    </p>
+</section>
+
+<!-- SECTION 3 (PHOTOS) -->
+<section style="background-image: url('IMG-20251126-WA0003.jpg');">
+    <h2>Us (or You 😍)</h2>
+    <div class="gallery">
+        <img src="1000030047.jpg">
+        <img src="1000026185.jpg">
+        <img src="IMG-20251126-WA0003.jpg">
+    </div>
+    <p>
+        
+        Every picture has a story… and somehow I want to be in all the next ones.
+    </p>
+</section>
+
+<!-- FINAL QUESTION -->
+<section class="final">
+    <h1>So… 💘</h1>
+    <p>
+         
+        I like you more than I probably should.  
+        And I’d really love to pin you down
+    </p>
+
+    <h2>Will you be my Valentine?</h2>
+
+    <button onclick="yes()">Yes ❤️</button>
+    <button id="noBtn">No</button>
+</section>
+
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+function startMusic() {
+    document.getElementById("music").play();
+}
+
+function yes() {
+    document.body.innerHTML = `
+        <section style="background-image:url('1000023840 copy.jpg'); min-height:100vh; display:flex; flex-direction:column; justify-content:center; font:Times new roman;align-items:center;">
+            <h1>I knew you loved me❤️.This is the best decision you made today!!</h1>
+                <h2>I'll get you cake ,i think 60kg is enough for you😈</h2>
+            <p>
+                 
+                You just made me very happy.  
+                Valentine’s Day just became *ours*.
+
+            </p>
+
+            <p>God forbid i take care of the elderly😉</p>
+        </section>
+    `;
+}
+
+</script>
+<script>
+const noBtn = document.getElementById("noBtn");
+
+const messages = [
+  "Are you sure",
+  "Are you really sure",
+  "DARWIN!!",
+  "Do a backflip for no😉",
+  "I don't think you did😏",
+  "You are not even that fine😂",
+  "This is not good for the soul😌",
+  "There is only YES ❤️"
+];
+
+let moveCount = 0;
+
+noBtn.addEventListener("mouseover", () => {
+    moveCount++;
+
+    // Move button randomly
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 150 - 75;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Change text each time
+    noBtn.innerText = messages[Math.min(moveCount, messages.length - 1)];
+
+    // After too many tries… surrender 😈
+    if (moveCount > 6) {
+        noBtn.innerText = "Okay okay… YES ❤️";
+        noBtn.style.background = "#ff4e50";
+    }
+});
+
+noBtn.addEventListener("click", () => {
+    noBtn.innerText = "HAHA… no 😈";
+});
+</script>
+
+
+</body>
+</html>
